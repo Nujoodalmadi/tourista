@@ -1,17 +1,21 @@
 {% extends "base.html" %} 
 
+
 {% block title %}Detail{% endblock title %} 
 
 {% block content %}
-    <p>{{destination.name}}</p>
-    <p>{{destination.description}}</p>
-    <p>{{destination.activities}}</p>
-    <p><img src="{{destination.pretty_picture.url}}"></p>
-    <p>{{destination.optimal_visiting_season}}</p>
-    <a href="{% url 'destination-update' destination.id %}">
-        <button>Update</button>
-    </a>
-    <a href="{% url 'destination-delete' destination.id %}">
-        <button>Delete</button>
-    </a>
+<div class="card bg-light text-dark">
+    <div class="card-body"></div>
+  
+  
+    <p class="img-name";>{{destination.name}}</p><br> 
+    <p class="img-desc">{{destination.description}}</p> <br> 
+    <p class= "img-act">Activities: {{destination.activities}}</p><br> <br> 
+    <p><img class="img-det" src="{{destination.pretty_picture.url}} " ></p>
+    <p class= "img-act">Optimal Visiting Season: {{destination.optimal_visiting_season}}</p>
+    <a href="{% url 'destination-update' destination.id %}"class="btn btn-secondary btn-lg btn-block">Update</a>
+    <a href="{% url 'destination-delete' destination.id %}" class="btn btn-secondary btn-lg btn-block">Delete</a>
+</div>
 {% endblock content %}
+
+
